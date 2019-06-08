@@ -1,5 +1,7 @@
 package com.wk.task1;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.wk.task1.converter.Converter;
 import com.wk.task1.dao.CashFlowDAO;
 import com.wk.task1.dao.ClientDAO;
 import com.wk.task1.dao.impl.CashFlowDAOImpl;
@@ -41,8 +43,14 @@ public class Main {
 //        System.out.println(clientDAO.getOne(1L));
 
         ClientService clientService = new ClientServiceImpl();
-        for (ClientDTO clientDTO : clientService.getAllClientDTO()) {
-            System.out.println(clientDTO);
-        }
+//        for (ClientDTO clientDTO : clientService.getAllClientDTO()) {
+//            System.out.println(clientDTO);
+//        }
+        System.out.println("***************");
+        Converter converter = new Converter();
+        System.out.println(converter.convertClientXMLOrJSON(clientService.getAllClientDTO()));
+        System.out.println("***************");
+
+
     }
 }

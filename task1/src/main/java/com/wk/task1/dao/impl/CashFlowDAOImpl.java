@@ -59,6 +59,7 @@ public class CashFlowDAOImpl implements CashFlowDAO {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setLong(1, clientId);
             resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             return resultSet.getDouble(1);
         } catch (SQLException e) {
             e.printStackTrace();
