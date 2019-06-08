@@ -12,13 +12,15 @@
     <artifactId>task1</artifactId>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <mysql.version>5.1.47</mysql.version>
-        <javax.servlet.version>4.0.0</javax.servlet.version>
+        <javax.servlet.version>4.0.1</javax.servlet.version>
+        <jackson.dataformat.xml.version>2.9.8</jackson.dataformat.xml.version>
         <jackson.jaxrs.version>2.4.1</jackson.jaxrs.version>
+        <lombok.version>1.18.8</lombok.version>
     </properties>
 
     <dependencies>
@@ -36,13 +38,27 @@
             <version>${javax.servlet.version}</version>
         </dependency>
 
+        <!-- Xxml -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.dataformat.xml.version}</version>
+        </dependency>
+
         <!-- json -->
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>${jackson.jaxrs.version}</version>
         </dependency>
-        
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

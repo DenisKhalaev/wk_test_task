@@ -17,14 +17,14 @@ USE ctb;
 --
 -- Описание для таблицы balance
 --
-DROP TABLE IF EXISTS balance;
-CREATE TABLE balance (
-  id_balance BIGINT(20) NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS cash_flow;
+CREATE TABLE cash_flow (
+  id_cash_flow BIGINT(20) NOT NULL AUTO_INCREMENT,
   client_id BIGINT(20) NOT NULL,
   date DATETIME NOT NULL,
   pay DOUBLE NOT NULL DEFAULT 0,
   refill DOUBLE NOT NULL DEFAULT 0,
-  PRIMARY KEY (id_balance)
+  PRIMARY KEY (id_cash_flow)
 )
   ENGINE = INNODB
   AUTO_INCREMENT = 1
@@ -64,7 +64,7 @@ CREATE TABLE tariff (
 --
 -- Вывод данных для таблицы balance
 --
-INSERT INTO balance VALUES
+INSERT INTO cash_flow VALUES
                            (1, 1, '2019-06-06 01:16:58', 0, 35),
                            (2, 1, '2019-06-06 01:18:08', 15, 0),
                            (3, 1, '2019-06-06 01:18:35', 3, 0),
