@@ -31,6 +31,7 @@ public class DBConnector {
                 );
             } catch (SQLException e) {
                 e.printStackTrace();
+
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

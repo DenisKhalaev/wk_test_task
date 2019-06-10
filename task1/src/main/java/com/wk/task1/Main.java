@@ -46,10 +46,10 @@ public class Main {
 //        for (ClientDTO clientDTO : clientService.getAllClientDTO()) {
 //            System.out.println(clientDTO);
 //        }
-        System.out.println("***************");
-        Converter converter = new Converter();
-        System.out.println(converter.convertClientXMLOrJSON(clientService.getAllClientDTO()));
-        System.out.println("***************");
+//        System.out.println("***************");
+//        Converter converter = new Converter();
+//        System.out.println(converter.convertClientXMLOrJSON(clientService.getAllClientDTO()));
+//        System.out.println("***************");
 
 
     }
