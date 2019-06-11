@@ -5,6 +5,7 @@ import com.wk.task1.service.impl.ClientServiceImpl;
 import com.wk.task1.util.SettingReader;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,19 +17,18 @@ import java.io.IOException;
 
 public class ClientServlet extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 
-//        if (SettingReader.getInstance().getSetting("settingXMLOrJSON")) {
-//            response.setContentType("application/json;charset=UTF-8");
-//            response.setCharacterEncoding("UTF-8");
-//            response.getWriter().write(Converter.convertClientToJSON(new ClientServiceImpl().getAllClientDTO()));
-//        } else {
-//            response.setContentType("text/xml;charset=UTF-8");
-//            response.setCharacterEncoding("UTF-8");
+        if (SettingReader.getInstance().getSetting("settingXMLOrJSON")) {
+            response.setContentType("text/json;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(Converter.convertClientToJSON(new ClientServiceImpl().getAllClientDTO()));
+        } else {
+            response.setContentType("text/xml;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
             response.getWriter().write(Converter.convertClientToXML(new ClientServiceImpl().getAllClientDTO()));
-//        }
+        }
 
     }
 }
