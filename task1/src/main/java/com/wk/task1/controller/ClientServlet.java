@@ -5,7 +5,6 @@ import com.wk.task1.service.impl.ClientServiceImpl;
 import com.wk.task1.util.SettingReader;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +24,7 @@ public class ClientServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(Converter.convertClientToJSON(new ClientServiceImpl().getAllClientDTO()));
         } else {
-            response.setContentType("text/xml;charset=UTF-8");
+            response.setContentType("text/xml");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(Converter.convertClientToXML(new ClientServiceImpl().getAllClientDTO()));
         }

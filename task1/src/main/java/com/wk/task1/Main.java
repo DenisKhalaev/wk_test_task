@@ -42,7 +42,7 @@ public class Main {
 //
 //        System.out.println(clientDAO.getOne(1L));
 
-        ClientService clientService = new ClientServiceImpl();
+//        ClientService clientService = new ClientServiceImpl();
 //        for (ClientDTO clientDTO : clientService.getAllClientDTO()) {
 //            System.out.println(clientDTO);
 //        }
