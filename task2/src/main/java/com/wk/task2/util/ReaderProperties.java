@@ -10,7 +10,7 @@ public class ReaderProperties {
     private static Map<String, String> setting;
 
     private ReaderProperties() {
-        Properties properties = PropertyUtils.getProperties("connection/connectiontaskone.properties");
+        Properties properties = PropertyUtils.getProperties("setting/setting.properties");
         Map<String, String> map = new HashMap<>();
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
             map.put((String) entry.getKey(), (String) entry.getValue());
