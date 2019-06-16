@@ -14,16 +14,11 @@ public class ConnectorToTaskOne {
 
     public static List<String> connect() throws IOException {
 
-
-        StringBuilder url = new StringBuilder();
-
-        url
-                .append(ReaderProperties.getInstance().getSetting("address"))
-                .append(ReaderProperties.getInstance().getSetting("serverPort"))
-                .append(ReaderProperties.getInstance().getSetting("nameModule"))
-                .append(ReaderProperties.getInstance().getSetting("nameController"));
-
-        URL myUrl = new URL(url.toString());
+        String url = ReaderProperties.getInstance().getSetting("address") +
+                ReaderProperties.getInstance().getSetting("serverPort") +
+                ReaderProperties.getInstance().getSetting("nameModule") +
+                ReaderProperties.getInstance().getSetting("nameController");
+        URL myUrl = new URL(url);
         HttpURLConnection myUrlCon = (HttpURLConnection) myUrl.openConnection();
 
         BufferedReader bufReader = new BufferedReader(new InputStreamReader(myUrlCon.getInputStream()));
