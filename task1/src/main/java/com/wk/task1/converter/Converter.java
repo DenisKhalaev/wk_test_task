@@ -14,12 +14,20 @@ public class Converter {
 
     public static String convertClientToXML(List<ClientDTO> clientDTOList) {
         XmlMapper xmlMapper = new XmlMapper();
-        try {
-            return xmlMapper.writeValueAsString(clientDTOList);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+        StringBuilder stringXML = new StringBuilder();
+        for (ClientDTO clientDTO : clientDTOList) {
+            try {
+                stringXML.append(xmlMapper.writeValueAsString(clientDTO));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
         }
-        return "";
+//        try {
+//            return xmlMapper.writeValueAsString(clientDTOList);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+        return stringXML.toString();
     }
 
     public static String convertClientToJSON(List<ClientDTO> clientDTOList) {
