@@ -1,12 +1,11 @@
 package com.wk.task2.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 
-import java.util.ArrayList;
-
 /**
+ * Класс модель клиента
+ *
  * @author Denis Khalaev
  */
 @NoArgsConstructor

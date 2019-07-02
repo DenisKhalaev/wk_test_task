@@ -8,10 +8,18 @@ import com.wk.task1.dto.ClientDTO;
 import java.util.List;
 
 /**
+ * Класс конвертор, преобразует список клиентов в XML или JSON
+ *
  * @author Denis Khalaev
  */
 public class Converter {
 
+    /**
+     * Преобразует список клиентов в XML
+     *
+     * @param clientDTOList - список клиентов
+     * @return возвращается список клиентов в виде XML
+     */
     public static String convertClientToXML(List<ClientDTO> clientDTOList) {
         XmlMapper xmlMapper = new XmlMapper();
         StringBuilder stringXML = new StringBuilder();
@@ -22,14 +30,16 @@ public class Converter {
                 e.printStackTrace();
             }
         }
-//        try {
-//            return xmlMapper.writeValueAsString(clientDTOList);
-//        } catch (JsonProcessingException e) {
-//            e.printStackTrace();
-//        }
-        return stringXML.toString();
+        return "<Clients>".concat(stringXML.toString()).concat("</Clients>");
     }
 
+
+    /**
+     * Преобразует список клиентов в JSON
+     *
+     * @param clientDTOList - список клиентов
+     * @return возвращается список клиентов в виде JSON
+     */
     public static String convertClientToJSON(List<ClientDTO> clientDTOList) {
         ObjectMapper mapper = new ObjectMapper();
         try {

@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
+ * Класс отвечает за чтение properties
+ *
  * @author Denis Khalaev
  */
 public class PropertyUtils {

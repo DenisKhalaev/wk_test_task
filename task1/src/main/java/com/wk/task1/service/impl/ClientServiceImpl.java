@@ -13,7 +13,7 @@ import com.wk.task1.service.ClientService;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/** Rласс реализует интерфейс ClientService
  * @author Denis Khalaev
  */
 public class ClientServiceImpl implements ClientService {
@@ -22,6 +22,10 @@ public class ClientServiceImpl implements ClientService {
     private TariffDAO tariffDAO = new TariffDAOImpl();
     private CashFlowDAO cashFlow = new CashFlowDAOImpl();
 
+    /** Метод получает данные из базы и преобразует их в список клиентов
+     *
+     * @return список клиентов
+     */
     @Override
     public List<ClientDTO> getAllClientDTO() {
         List<ClientDTO> clientDTOList = new ArrayList<>();

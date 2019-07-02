@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/**
+/** Класс отвечающий за получаение SQL запросов из файла properties
  * @author Denis Khalaev
  */
 public class SQLQuery {

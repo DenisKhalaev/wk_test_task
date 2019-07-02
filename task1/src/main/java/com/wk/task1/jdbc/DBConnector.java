@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
+/** Класс отвечающий за создание соединения с БД
  * @author Denis Khalaev
  */
 public class DBConnector {

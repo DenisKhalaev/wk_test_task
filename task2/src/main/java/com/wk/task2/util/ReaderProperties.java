@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * Класс отвечает за чтение настроек
+ *
+ * @author Denis Khalaev
+ */
 public class ReaderProperties {
 
     private static ReaderProperties instance;

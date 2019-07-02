@@ -4,7 +4,7 @@ import lombok.*;
 
 import java.util.Date;
 
-/**
+/** Класс отражающий талицу в БД
  * @author Denis Khalaev
  */
 @NoArgsConstructor

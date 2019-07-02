@@ -2,7 +2,7 @@ package com.wk.task1.model;
 
 import lombok.*;
 
-/**
+/** Класс отражающий талицу в БД
  * @author Denis Khalaev
  */
 @NoArgsConstructor

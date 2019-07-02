@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.*;
 
 /**
+ * Класс модель Тарифа
+ *
  * @author Denis Khalaev
  */
 @NoArgsConstructor

@@ -15,12 +15,21 @@ import java.util.List;
 import static com.wk.task1.util.PropertyUtils.closeConnection;
 
 /**
+ * класс реализует интерфейс ClientDAO, получает данные из таблиц БД MySQL,
+ * с использованием JDBC.
+ *
  * @author Denis Khalaev
  */
 public class ClientDAOImpl implements ClientDAO {
 
     private Connection connection = DBConnector.getInstance().getConnection();
 
+    /**
+     * Метод получает клиента по Id
+     *
+     * @param clientId id клиента
+     * @return клиент
+     */
     @Override
     public Client getOne(Long clientId) {
         String query = SQLQuery.getInstance().getQuery("getClientById");
@@ -45,6 +54,10 @@ public class ClientDAOImpl implements ClientDAO {
         return null;
     }
 
+    /**
+     * Метод возвращает список всех клиентов
+     * @return спиок клиентов
+     */
     @Override
     public List<Client> getAllClient() {
         String query = SQLQuery.getInstance().getQuery("getAllClient");

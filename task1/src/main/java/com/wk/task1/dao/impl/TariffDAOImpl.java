@@ -14,13 +14,20 @@ import java.util.List;
 
 import static com.wk.task1.util.PropertyUtils.closeConnection;
 
-/**
+/**класс реализует интерфейс TariffDAO, получает данные из таблиц БД MySQL,
+ * с использованием JDBC.
+ *
  * @author Denis Khalaev
  */
 public class TariffDAOImpl implements TariffDAO {
 
     private Connection connection = DBConnector.getInstance().getConnection();
 
+    /**
+     * Метод получает из базы тариф по Id
+     * @param tariffId тариф id
+     * @return Tariff
+     */
     @Override
     public Tariff getOne(Long tariffId) {
         String query = SQLQuery.getInstance().getQuery("getTariffById");
@@ -46,6 +53,11 @@ public class TariffDAOImpl implements TariffDAO {
         return null;
     }
 
+    /**
+     * Метод получает список всех тарифов
+     *
+     * @return список тарифов
+     */
     @Override
     public List<Tariff> getAllTariff() {
         String query = SQLQuery.getInstance().getQuery("getAllTariff");

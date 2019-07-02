@@ -5,6 +5,7 @@ import com.wk.task1.model.Tariff;
 import lombok.*;
 
 /**
+ * Класс клиента для передачи, вместо списка операций уже конкретный баланс
  * @author Denis Khalaev
  */
 

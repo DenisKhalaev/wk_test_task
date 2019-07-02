@@ -4,7 +4,7 @@ import com.wk.task1.model.Client;
 
 import java.util.List;
 
-/**
+/** Интерфейс обеспечивающий доступ данных к базе данных MySQL (таблица клиент)
  * @author Denis Khalaev
  */
 public interface ClientDAO {

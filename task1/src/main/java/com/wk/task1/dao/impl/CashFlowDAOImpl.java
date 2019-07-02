@@ -14,13 +14,20 @@ import java.util.List;
 
 import static com.wk.task1.util.PropertyUtils.closeConnection;
 
-/**
+/** класс реализует интерфейс CashFlowDAO, получает данные из таблиц БД MySQL,
+ * с использованием JDBC.
+ *
  * @author Denis Khalaev
  */
 public class CashFlowDAOImpl implements CashFlowDAO {
 
     private Connection connection = DBConnector.getInstance().getConnection();
 
+    /**
+     * Метод получает список всех движений средств клиента по id клиента
+     * @param clientId id клиента
+     * @return список денежных операций клиента
+     */
     @Override
     public List<CashFlow> getOneClient(Long clientId) {
         String query = SQLQuery.getInstance().getQuery("getCashFlowClient");
@@ -50,6 +57,11 @@ public class CashFlowDAOImpl implements CashFlowDAO {
         return null;
     }
 
+    /**
+     * метод получает баланс клиента по его id
+     * @param clientId id клиента
+     * @return баланс клиента double
+     */
     @Override
     public Double getCalcBalanceClientInDB(Long clientId) {
         String query = SQLQuery.getInstance().getQuery("getBalanceClient");
