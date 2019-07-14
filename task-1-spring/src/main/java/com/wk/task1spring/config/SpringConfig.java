@@ -1,6 +1,7 @@
 package com.wk.task1spring.config;
 
 import com.wk.task1spring.controller.ClientController;
+import com.wk.task1spring.controller.ClientControllerJSON;
 import com.wk.task1spring.dao.CashFlowDAO;
 import com.wk.task1spring.dao.ClientDAO;
 import com.wk.task1spring.dao.TariffDAO;
@@ -58,6 +59,11 @@ public class SpringConfig {
     @Bean
     public ClientController clientController() {
         return new ClientController();
+    }
+
+    @Bean
+    public ClientControllerJSON clientControllerJSON(){
+        return new ClientControllerJSON();
     }
 
     @Bean
