@@ -24,6 +24,10 @@ public class Interrogator extends Thread {
     private void interrogatorTaskOne() throws IOException, InterruptedException {
 
         while (true) {
+            //todo убрать потом, для отображения работы цикла.
+            System.out.println(ConnectorToTaskOne.getContentType());
+            System.out.println(ConnectorToTaskOne.getContent());
+
             Interrogator.sleep((Long.parseLong(ReaderProperties.getInstance().getSetting("timeN"))) * 1000);
 
             if (ConnectorToTaskOne.getContentType().contains("json")) {
@@ -33,6 +37,7 @@ public class Interrogator extends Thread {
                 converter.setXMLFile(ConnectorToTaskOne.getContent());
                 converter.convertToXSLT();
             }
+
         }
     }
 
