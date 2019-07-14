@@ -18,6 +18,16 @@
                             </td>
                         </tr>
                     </xsl:for-each>
+                    <xsl:for-each select="clientDTOList/client">
+                        <tr>
+                            <td>
+                                <xsl:value-of select="idClient"/>
+                            </td>
+                            <td>
+                                <xsl:value-of select="balance"/>
+                            </td>
+                        </tr>
+                    </xsl:for-each>
                 </table>
             </body>
         </html>

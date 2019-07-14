@@ -11,5 +11,5 @@ import java.util.List;
 @Data
 @XmlRootElement
 public class ClientDTOList {
-    List<ClientDTO> clientDTOList;
+    List<ClientDTO> client;
 }
