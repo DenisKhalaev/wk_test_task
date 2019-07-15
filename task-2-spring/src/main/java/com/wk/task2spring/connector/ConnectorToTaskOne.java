@@ -45,17 +45,14 @@ public class ConnectorToTaskOne {
     }
 
     public String getContentType() throws IOException {
-        if (myUrlCon==null){
+        if (myUrlCon == null) {
             connect();
         }
         return myUrlCon.getContentType();
     }
 
-
     public String getContent() throws IOException {
-        if (myUrlCon==null){
-            connect();
-        }
+        connect();
         BufferedReader bufReader = new BufferedReader(new InputStreamReader(myUrlCon.getInputStream()));
         StringBuilder sb = new StringBuilder();
         String line = bufReader.readLine();

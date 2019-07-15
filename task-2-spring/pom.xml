@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <lombok.version>1.18.8</lombok.version>
-        <spring.core.version>5.1.5.RELEASE</spring.core.version>
+        <spring.context.version>5.1.5.RELEASE</spring.context.version>
         <javax.servlet.api.version>3.0.1</javax.servlet.api.version>
         <jackson.databind.version>2.9.8</jackson.databind.version>
     </properties>
@@ -33,8 +33,8 @@
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.core.version}</version>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.context.version}</version>
         </dependency>
 
         <dependency>

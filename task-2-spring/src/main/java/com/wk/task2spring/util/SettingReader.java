@@ -11,9 +11,12 @@ import java.util.Properties;
 public class SettingReader {
 
     private Map<String, String> setting;
+    private SettingReader instance;
 
+    public SettingReader() {
+    }
 
-    public SettingReader(String fileName) {
+    private SettingReader(String fileName) {
         Properties properties = PropertyUtils.getProperties(fileName);
         Map<String, String> map = new HashMap<>();
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
@@ -22,8 +25,8 @@ public class SettingReader {
         setting = map;
     }
 
-    public SettingReader getInstance(String fileName) {
-        SettingReader instance = new SettingReader(fileName);
+    public SettingReader setSettingReader(String fileName) {
+        instance = new SettingReader(fileName);
         return instance;
     }
 
