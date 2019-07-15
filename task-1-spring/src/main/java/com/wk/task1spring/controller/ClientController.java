@@ -1,6 +1,6 @@
 package com.wk.task1spring.controller;
 
-import com.wk.task1spring.dto.ClientDTOList;
+import com.wk.task1spring.dto.Clients;
 import com.wk.task1spring.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 @RequestMapping("client")
 public class ClientController {
-    
+
     @Qualifier("clientServiceImpl")
     @Autowired
     private ClientService clientService;
@@ -28,8 +28,8 @@ public class ClientController {
             produces = MediaType.APPLICATION_XML_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public ClientDTOList getAllUserRequest() {
-        ClientDTOList list = new ClientDTOList();
+    public Clients getAllUserRequest() {
+        Clients list = new Clients();
         list.setClient(clientService.getAllClientDTO());
         return list;
     }

@@ -10,6 +10,6 @@ import java.util.List;
  */
 @Data
 @XmlRootElement
-public class ClientDTOList {
+public class Clients {
     List<ClientDTO> client;
 }
