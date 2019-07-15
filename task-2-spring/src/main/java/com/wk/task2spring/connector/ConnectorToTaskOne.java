@@ -1,6 +1,7 @@
 package com.wk.task2spring.connector;
 
 import com.wk.task2spring.util.SettingReader;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.net.URL;
 /**
  * @author Denis Khalaev
  */
+@Service
 public class ConnectorToTaskOne {
 
     private SettingReader settingReader;

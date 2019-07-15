@@ -1,6 +1,8 @@
 package com.wk.task2spring.util;
 
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -8,6 +10,7 @@ import java.util.Properties;
 /**
  * @author Denis Khalaev
  */
+@Service
 public class SettingReader {
 
     private Map<String, String> setting;

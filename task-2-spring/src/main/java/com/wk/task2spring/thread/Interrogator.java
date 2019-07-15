@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.xml.bind.JAXBException;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -15,6 +16,7 @@ import java.io.IOException;
  */
 public class Interrogator extends Thread {
 
+    private static Integer count = 0;
 
     private Converter converter;
 
@@ -22,11 +24,16 @@ public class Interrogator extends Thread {
 
     private SettingReader settingReader;
 
+    public int getStatus() {
+        return count;
+    }
+
     private void interrogatorTaskOne() throws IOException, InterruptedException {
+
+        count++;
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         settingReader = new SettingReader().setSettingReader("setting/setting.properties");
-        System.out.println(settingReader.getSetting("timeN"));
 
         connectorToTaskOne = context.getBean(ConnectorToTaskOne.class);
         converter = context.getBean(Converter.class);
@@ -44,9 +51,9 @@ public class Interrogator extends Thread {
                 }
             }
 //                todo убрать потом, для отображения работы цикла.
+            System.out.println("Sleep: " + settingReader.getSetting("timeN") + " sec.");
             System.out.println(connectorToTaskOne.getContentType());
             System.out.println(connectorToTaskOne.getContent());
-            System.out.println("Sleep:" + settingReader.getSetting("timeN"));
 
             converter.convertToXSLT();
             Interrogator.sleep((Long.parseLong(settingReader.getSetting("timeN"))) * 1000);
