@@ -5,7 +5,6 @@ import com.wk.task2spring.converter.Converter;
 import com.wk.task2spring.converter.impl.ConverterImpl;
 import com.wk.task2spring.util.SettingReader;
 
-import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
 /**
@@ -14,23 +13,23 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) throws IOException {
 
-        ConnectorToTaskOne connectorToTaskOneJSON = new ConnectorToTaskOne();
-        connectorToTaskOneJSON.setSettingReader(new SettingReader("setting/setting.properties"))
-                .setNameController("nameControllerJSON");
+//        ConnectorToTaskOne connectorToTaskOneJSON = new ConnectorToTaskOne();
+//        connectorToTaskOneJSON.setSettingReader(new SettingReader("setting/setting.properties"))
+//                .setNameController("nameControllerJSON");
 
         Converter converter = new ConverterImpl();
-        try {
-            converter.convertClientListToXMLFile(converter.convertJSONToObj(connectorToTaskOneJSON.getContent()));
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        converter.convertToXSLT();
+//        try {
+//            converter.convertClientListToXMLFile(converter.convertJSONToObj(connectorToTaskOneJSON.getContent()));
+//        } catch (JAXBException e) {
+//            e.printStackTrace();
+//        }
+//        converter.convertToXSLT();
 
-//   ConnectorToTaskOne connectorToTaskOneXML = new ConnectorToTaskOne()
-//           .setSettingReader(new SettingReader("setting/setting.properties"))
-//           .setNameController("nameControllerXML");
-//
-//   converter.writeXMLtoXMLFile(connectorToTaskOneXML.getContent());
-//   converter.convertToXSLT();
+   ConnectorToTaskOne connectorToTaskOneXML = new ConnectorToTaskOne()
+           .setSettingReader(new SettingReader("setting/setting.properties"))
+           .setNameController("nameControllerXML");
+
+   converter.writeXMLtoXMLFile(connectorToTaskOneXML.getContent());
+   converter.convertToXSLT();
     }
 }

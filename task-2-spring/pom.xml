@@ -30,12 +30,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spring -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring.core.version}</version>
-        </dependency>
+
 
         <dependency>
             <groupId>javax.servlet</groupId>
