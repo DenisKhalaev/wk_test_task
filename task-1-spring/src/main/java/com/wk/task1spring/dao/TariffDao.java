@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public interface TariffDAO {
+public interface TariffDao {
 
     Tariff getOne(Long tariffId);
 

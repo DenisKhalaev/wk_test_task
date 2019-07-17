@@ -13,8 +13,8 @@ public class CashFlowMapper implements RowMapper<CashFlow> {
     @Override
     public CashFlow mapRow(ResultSet resultSet, int i) throws SQLException {
         CashFlow cashFlow = new CashFlow();
-        cashFlow.setIdCashFlow(resultSet.getLong("id_cash_flow"));
-        cashFlow.setClientId(resultSet.getLong("client_id"));
+        cashFlow.setCashFlowId(resultSet.getLong("id_cash_flow"));
+        cashFlow.setIdClient(resultSet.getLong("client_id"));
         cashFlow.setDate(resultSet.getDate("date"));
         cashFlow.setPayment(resultSet.getDouble("pay"));
         cashFlow.setRefill(resultSet.getDouble("refill"));

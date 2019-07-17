@@ -1,6 +1,6 @@
 package com.wk.task1spring.dao.impl;
 
-import com.wk.task1spring.dao.TariffDAO;
+import com.wk.task1spring.dao.TariffDao;
 import com.wk.task1spring.mapper.TariffMapper;
 import com.wk.task1spring.model.Tariff;
 import com.wk.task1spring.util.SettingReader;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public class TariffDAOImpl implements TariffDAO {
+public class TariffDaoImpl implements TariffDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

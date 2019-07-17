@@ -1,6 +1,6 @@
 package com.wk.task1spring.service;
 
-import com.wk.task1spring.dto.ClientDTO;
+import com.wk.task1spring.dto.ClientDto;
 
 import java.util.List;
 
@@ -8,5 +8,5 @@ import java.util.List;
  * @author Denis Khalaev
  */
 public interface ClientService {
-    List<ClientDTO> getAllClientDTO();
+    List<ClientDto> getAllClientDto();
 }

@@ -1,6 +1,7 @@
 package com.wk.task2spring.connector;
 
 import com.wk.task2spring.util.SettingReader;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,26 +12,27 @@ import java.net.URL;
 /**
  * @author Denis Khalaev
  */
-public class ConnectorToTaskOne {
+@Service
+public class TaskOneConnector {
 
     private SettingReader settingReader;
     private HttpURLConnection myUrlCon;
     private String nameController;
 
-    public ConnectorToTaskOne() {
+    public TaskOneConnector() {
     }
 
-    public ConnectorToTaskOne(SettingReader settingReader, String nameController) {
+    public TaskOneConnector(SettingReader settingReader, String nameController) {
         this.settingReader = settingReader;
         this.nameController = nameController;
     }
 
-    public ConnectorToTaskOne setSettingReader(SettingReader settingReader) {
+    public TaskOneConnector setSettingReader(SettingReader settingReader) {
         this.settingReader = settingReader;
         return this;
     }
 
-    public ConnectorToTaskOne setNameController(String nameController) {
+    public TaskOneConnector setNameController(String nameController) {
         this.nameController = nameController;
         return this;
     }
@@ -45,17 +47,14 @@ public class ConnectorToTaskOne {
     }
 
     public String getContentType() throws IOException {
-        if (myUrlCon==null){
+        if (myUrlCon == null) {
             connect();
         }
         return myUrlCon.getContentType();
     }
 
-
     public String getContent() throws IOException {
-        if (myUrlCon==null){
-            connect();
-        }
+        connect();
         BufferedReader bufReader = new BufferedReader(new InputStreamReader(myUrlCon.getInputStream()));
         StringBuilder sb = new StringBuilder();
         String line = bufReader.readLine();

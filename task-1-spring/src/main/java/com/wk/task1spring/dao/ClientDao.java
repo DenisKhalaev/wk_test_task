@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public interface ClientDAO {
+public interface ClientDao {
+
     List<Client> getAllClient();
-    Client getClient (Long id);
+
+    Client getOne(Long clientId);
 }

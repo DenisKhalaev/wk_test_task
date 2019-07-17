@@ -1,13 +1,12 @@
 package com.wk.task1spring.config;
 
 import com.wk.task1spring.controller.ClientController;
-import com.wk.task1spring.controller.ClientControllerJSON;
-import com.wk.task1spring.dao.CashFlowDAO;
-import com.wk.task1spring.dao.ClientDAO;
-import com.wk.task1spring.dao.TariffDAO;
-import com.wk.task1spring.dao.impl.CashFlowDAOImpl;
-import com.wk.task1spring.dao.impl.ClientDAOImpl;
-import com.wk.task1spring.dao.impl.TariffDAOImpl;
+import com.wk.task1spring.dao.CashFlowDao;
+import com.wk.task1spring.dao.ClientDao;
+import com.wk.task1spring.dao.TariffDao;
+import com.wk.task1spring.dao.impl.CashFlowDaoImpl;
+import com.wk.task1spring.dao.impl.ClientDaoImpl;
+import com.wk.task1spring.dao.impl.TariffDaoImpl;
 import com.wk.task1spring.service.ClientService;
 import com.wk.task1spring.service.impl.ClientServiceImpl;
 import com.wk.task1spring.util.SettingReader;
@@ -42,36 +41,23 @@ public class SpringConfig {
     }
 
     @Bean
-    public ClientDAO getClientDAO() {
-        return new ClientDAOImpl();
+    public ClientDao getClientDao() {
+        return new ClientDaoImpl();
     }
 
     @Bean
-    public TariffDAO getTariffDAO() {
-        return new TariffDAOImpl();
+    public TariffDao getTariffDao() {
+        return new TariffDaoImpl();
     }
 
     @Bean
-    public CashFlowDAO getCashFlowDAO() {
-        return new CashFlowDAOImpl();
+    public CashFlowDao getCashFlowDao() {
+        return new CashFlowDaoImpl();
     }
 
     @Bean
     public ClientController clientController() {
         return new ClientController();
-    }
-
-    @Bean
-    public ClientControllerJSON clientControllerJSON(){
-        return new ClientControllerJSON();
-    }
-
-    @Bean
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
     }
 
     @Bean

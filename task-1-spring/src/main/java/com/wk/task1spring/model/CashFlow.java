@@ -10,8 +10,8 @@ import java.util.Date;
 @Data
 public class CashFlow {
 
-    private Long idCashFlow;
-    private Long clientId;
+    private Long cashFlowId;
+    private Long IdClient;
     private Date date;
     private Double payment;
     private Double refill;

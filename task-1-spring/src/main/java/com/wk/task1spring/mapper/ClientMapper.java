@@ -13,9 +13,9 @@ public class ClientMapper implements RowMapper<Client> {
 
     public Client mapRow(ResultSet resultSet, int i) throws SQLException {
         Client client = new Client();
-        client.setIdClient(resultSet.getLong("id_client"));
+        client.setClientId(resultSet.getLong("id_client"));
         client.setName(resultSet.getString("name_client"));
-        client.setTariffId(resultSet.getLong("tariff_id"));
+        client.setIdTariff(resultSet.getLong("tariff_id"));
         return client;
     }
 }

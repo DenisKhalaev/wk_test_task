@@ -1,6 +1,6 @@
 package com.wk.task1spring.dao.impl;
 
-import com.wk.task1spring.dao.CashFlowDAO;
+import com.wk.task1spring.dao.CashFlowDao;
 import com.wk.task1spring.mapper.CashFlowMapper;
 import com.wk.task1spring.model.CashFlow;
 import com.wk.task1spring.util.SettingReader;
@@ -12,14 +12,14 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public class CashFlowDAOImpl implements CashFlowDAO {
+public class CashFlowDaoImpl implements CashFlowDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
     private SettingReader settingReader = SettingReader.getInstance("sql/mysql_query.properties");
 
     @Override
-    public List<CashFlow> getOneClient(Long idClient) {
+    public List<CashFlow> getOneClientCashFlow(Long idClient) {
         return jdbcTemplate.query(settingReader.getSetting("getCashFlowClient"), new CashFlowMapper(), idClient);
 
     }

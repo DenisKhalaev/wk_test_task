@@ -10,7 +10,7 @@ import lombok.*;
 @JsonAutoDetect
 public class Tariff {
 
-    private Long idTariff;
+    private Long tariffId;
     private String nameTariff;
     private Double charge;
 

@@ -8,10 +8,10 @@
                         <th>Client ID</th>
                         <th>Balance</th>
                     </tr>
-                    <xsl:for-each select="clients/client">
+                    <xsl:for-each select="clientList/client">
                         <tr>
                             <td>
-                                <xsl:value-of select="idClient"/>
+                                <xsl:value-of select="clientId"/>
                             </td>
                             <td>
                                 <xsl:value-of select="balance"/>

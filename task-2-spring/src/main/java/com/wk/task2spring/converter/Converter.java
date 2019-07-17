@@ -12,10 +12,10 @@ public interface Converter {
 
     List<Client> convertJSONToObj(String json);
 
-    void convertClientListToXMLFile(List<Client> clientList) throws JAXBException;
+    void convertClientListToXmlFile(List<Client> clientList) throws JAXBException;
 
-    void convertToXSLT();
+    void convertToXslt();
 
-    void writeXMLtoXMLFile(String xml);
+    void writeXmltoXmlFile(String xml);
 
 }

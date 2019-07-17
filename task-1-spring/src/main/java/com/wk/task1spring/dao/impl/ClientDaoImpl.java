@@ -1,6 +1,6 @@
 package com.wk.task1spring.dao.impl;
 
-import com.wk.task1spring.dao.ClientDAO;
+import com.wk.task1spring.dao.ClientDao;
 import com.wk.task1spring.mapper.ClientMapper;
 import com.wk.task1spring.model.Client;
 import com.wk.task1spring.util.SettingReader;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public class ClientDAOImpl implements ClientDAO {
+public class ClientDaoImpl implements ClientDao {
 
 
     @Autowired
@@ -20,8 +20,8 @@ public class ClientDAOImpl implements ClientDAO {
     private SettingReader settingReader = SettingReader.getInstance("sql/mysql_query.properties");
 
     @Override
-    public Client getClient(Long idClient) {
-        return jdbcTemplate.queryForObject(settingReader.getSetting("getClientById"), new ClientMapper(), idClient);
+    public Client getOne(Long clientId) {
+        return jdbcTemplate.queryForObject(settingReader.getSetting("getClientById"), new ClientMapper(), clientId);
     }
 
     @Override

@@ -7,9 +7,9 @@ import java.util.List;
 /**
  * @author Denis Khalaev
  */
-public interface CashFlowDAO {
+public interface CashFlowDao {
 
-    List<CashFlow> getOneClient(Long idClient);
+    List<CashFlow> getOneClientCashFlow(Long idClient);
 
     Double getCalcBalanceClientInDB(Long idClient);
 }

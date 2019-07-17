@@ -1,6 +1,8 @@
 package com.wk.task2spring.util;
 
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -8,12 +10,16 @@ import java.util.Properties;
 /**
  * @author Denis Khalaev
  */
+@Service
 public class SettingReader {
 
     private Map<String, String> setting;
+    private static volatile SettingReader instance;
 
+    public SettingReader() {
+    }
 
-    public SettingReader(String fileName) {
+    private SettingReader(String fileName) {
         Properties properties = PropertyUtils.getProperties(fileName);
         Map<String, String> map = new HashMap<>();
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
@@ -22,8 +28,12 @@ public class SettingReader {
         setting = map;
     }
 
-    public SettingReader getInstance(String fileName) {
-        SettingReader instance = new SettingReader(fileName);
+    public SettingReader setSettingReader(String fileName) {
+        synchronized (SettingReader.class) {
+            if (fileName != null) {
+                instance = new SettingReader(fileName);
+            }
+        }
         return instance;
     }
 

@@ -10,7 +10,7 @@ import lombok.Data;
 @JsonAutoDetect
 public class Client {
 
-    private Long idClient;
+    private Long clientId;
     private String name;
     private Tariff tariff;
     private Double balance;

@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class Tariff {
 
-    private Long idTariff;
+    private Long tariffId;
     private String nameTariff;
     private Double charge;
 

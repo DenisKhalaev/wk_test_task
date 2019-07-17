@@ -12,8 +12,8 @@ import java.io.Serializable;
  */
 @Data
 @XmlRootElement
-public class ClientDTO implements Serializable {
-    private Long idClient;
+public class ClientDto implements Serializable {
+    private Long clientId;
     private String name;
     private Tariff tariff;
     private Double balance;

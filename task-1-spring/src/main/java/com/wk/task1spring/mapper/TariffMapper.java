@@ -13,7 +13,7 @@ public class TariffMapper implements RowMapper<Tariff> {
     @Override
     public Tariff mapRow(ResultSet resultSet, int i) throws SQLException {
         Tariff tariff = new Tariff();
-        tariff.setIdTariff(resultSet.getLong("id_tariff"));
+        tariff.setTariffId(resultSet.getLong("id_tariff"));
         tariff.setNameTariff(resultSet.getString("name_tariff"));
         tariff.setCharge(resultSet.getDouble("charge"));
         return tariff;

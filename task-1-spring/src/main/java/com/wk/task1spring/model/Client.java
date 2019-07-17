@@ -13,8 +13,8 @@ import lombok.*;
 @ToString // for test time
 public class Client {
 
-    private Long idClient;
+    private Long clientId;
     private String name;
-    private Long tariffId;
+    private Long IdTariff;
 
 }
