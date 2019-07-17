@@ -30,12 +30,12 @@ public class ClientServiceImpl implements ClientService {
         List<ClientDto> clientDtoList = new ArrayList<>();
         List<Client> clientList = clientDao.getAllClient();
         for (Client client : clientList) {
-            ClientDto clientDTO = new ClientDto();
-            clientDTO.setClientId(client.getClientId());
-            clientDTO.setName(client.getName());
-            clientDTO.setTariff(tariffDao.getOne(client.getIdTariff()));
-            clientDTO.setBalance(cashFlowDao.getCalcBalanceClientInDB(client.getClientId()));
-            clientDtoList.add(clientDTO);
+            ClientDto clientDto = new ClientDto();
+            clientDto.setClientId(client.getClientId());
+            clientDto.setName(client.getName());
+            clientDto.setTariff(tariffDao.getOne(client.getIdTariff()));
+            clientDto.setBalance(cashFlowDao.getCalcBalanceClientInDB(client.getClientId()));
+            clientDtoList.add(clientDto);
         }
         return clientDtoList;
     }
