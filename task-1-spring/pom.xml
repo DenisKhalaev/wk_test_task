@@ -17,7 +17,7 @@
 
         <mysql.version>5.1.47</mysql.version>
         <lombok.version>1.18.8</lombok.version>
-        <spring.webmvc.version>5.0.2.RELEASE</spring.webmvc.version>
+        <spring.webmvc.version>5.1.0.RELEASE</spring.webmvc.version>
         <spring.jdbc.version>5.0.2.RELEASE</spring.jdbc.version>
         <javax.servlet.api.version>3.0.1</javax.servlet.api.version>
         <jackson.databind.version>2.9.8</jackson.databind.version>
