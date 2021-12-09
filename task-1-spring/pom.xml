@@ -20,7 +20,7 @@
         <spring.webmvc.version>5.0.2.RELEASE</spring.webmvc.version>
         <spring.jdbc.version>5.0.2.RELEASE</spring.jdbc.version>
         <javax.servlet.api.version>3.0.1</javax.servlet.api.version>
-        <jackson.databind.version>2.9.8</jackson.databind.version>
+        <jackson.databind.version>2.9.10.8</jackson.databind.version>
     </properties>
 
     <dependencies>
