@@ -15,7 +15,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <lombok.version>1.18.8</lombok.version>
         <spring.webmvc.version>5.0.2.RELEASE</spring.webmvc.version>
         <spring.jdbc.version>5.0.2.RELEASE</spring.jdbc.version>
